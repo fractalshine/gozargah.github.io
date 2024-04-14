@@ -32,7 +32,6 @@ nano docker-compose.yml
 
 - Remove the `#` sign at the beginngog of the phrase `SSL_CLIENT_CERT_FILE` and align this line with the one below. After saving the changes, your file content will be as follows:
 
-::: code-group
 ```yml [docker-compose.yml]
 services:
   marzban-node:
@@ -48,7 +47,6 @@ services:
     volumes:
       - /var/lib/marzban-node:/var/lib/marzban-node
 ```
-:::
 
 
 - Now go to the `Node Settings` section through the menu in your panel.
