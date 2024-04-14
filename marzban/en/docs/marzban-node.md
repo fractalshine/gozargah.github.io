@@ -155,7 +155,7 @@ docker compose up -d
 
 <br>
 
-### Second Scenario: Using Port Mapping
+### Second case: Using Port Mapping
 
 In this scenario, only specific ports are usable and duplicate ports on the server node will be prevented. Please note that you should specify the ports used in your services in the `docker-compose.yml` file.
 
