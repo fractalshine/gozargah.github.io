@@ -43,6 +43,7 @@ services:
       SSL_CLIENT_CERT_FILE: "/var/lib/marzban-node/ssl_client_cert.pem"
       SSL_CERT_FILE: "/var/lib/marzban-node/ssl_cert.pem"
       SSL_KEY_FILE: "/var/lib/marzban-node/ssl_key.pem"
+
     volumes:
       - /var/lib/marzban-node:/var/lib/marzban-node
 ```
@@ -81,9 +82,7 @@ You can disable this checkbox and add the Node server IP only for necessary conn
 
 - Finally, click on `Add Node` to add the node. Now the node is ready to use. You can use the Node server IP for desired connections by managing your hosts in the `Host Settings` section.
 
-::: warning Attention
 If you have enabled a firewall on the Node server, you need to open ports for both panel connections and inbound ports in the Node server firewall.
-:::
 
 ## Connecting Marzban Node to Multiple Panels
 
