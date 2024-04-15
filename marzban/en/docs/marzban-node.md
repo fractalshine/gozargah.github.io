@@ -35,7 +35,6 @@ nano docker-compose.yml
 ```yml [docker-compose.yml]
 services:
   marzban-node:
-    # build: .
     image: gozargah/marzban-node:latest
     restart: always
     network_mode: host
