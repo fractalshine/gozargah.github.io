@@ -24,13 +24,13 @@ git clone https://github.com/Gozargah/Marzban-node
 mkdir /var/lib/marzban-node 
 ```
 
-- To establish a secure connection between the node and the border panel, changes need to be made in the `docker-compose.yml` file. So, navigate to the main folder of Border Patrol Node and open this file for editing.
+- To establish a secure connection between the node and the border panel, changes need to be made in the `docker-compose.yml` file. So, navigate to the main folder of Marzban Node and open this file for editing.
 ```bash
 cd ~/Marzban-node
 nano docker-compose.yml
 ```
 
-- Remove the `#` sign at the beginngog of the phrase `SSL_CLIENT_CERT_FILE` and align this line with the one below. After saving the changes, your file content will be as follows:
+- Remove the `#` sign at the beginning of the phrase `SSL_CLIENT_CERT_FILE` and align this line with the one below. After saving the changes, your file content will be as follows:
 
 ```yml [docker-compose.yml]
 services:
@@ -74,7 +74,7 @@ docker compose up -d
 1. In the `Name` section, choose a desired name for the node.
 2. Enter the IP address of the node in the `Address` section.
 3. Leave default connection ports for the node including `Port` and `API Port` unchanged.
-4. If you want your node's border host to be added for all inbound connections as a new host, checkmark 'Add this node as a new host for every inbound'.
+4. If you want your node's host to be added for all inbound connections as a new host, checkmark 'Add this node as a new host for every inbound'.
 
 ::: tip Note
 You can disable this checkbox and add the Node server IP only for necessary connections as a host in the `Host Settings` section.
@@ -88,7 +88,7 @@ If you have enabled a firewall on the Node server, you need to open ports for bo
 
 ## Connecting Marzban Node to Multiple Panels
 
-If you need to connect a Node server to multiple Border panels, you need to add a new node service in the `docker-compose.yml` file for each panel. This can be done in two ways.
+If you need to connect a Node server to multiple mrzban panels, you need to add a new node service in the `docker-compose.yml` file for each panel. This can be done in two ways.
 
 ::: tip Note
 In both configuration options, you can modify port settings used in sample `docker-compose.yml` files according to your needs. Additionally, you can add as many node services as required in this file.
