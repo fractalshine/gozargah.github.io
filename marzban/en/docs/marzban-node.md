@@ -76,9 +76,7 @@ docker compose up -d
 3. Leave default connection ports for the node including `Port` and `API Port` unchanged.
 4. If you want your node's host to be added for all inbound connections as a new host, checkmark 'Add this node as a new host for every inbound'.
 
-::: tip Note
-You can disable this checkbox and add the Node server IP only for necessary connections as a host in the `Host Settings` section.
-:::
+> You can disable this checkbox and add the Node server IP only for necessary connections as a host in the `Host Settings` section.
 
 - Finally, click on `Add Node` to add the node. Now the node is ready to use. You can use the Node server IP for desired connections by managing your hosts in the `Host Settings` section.
 
@@ -88,10 +86,7 @@ If you have enabled a firewall on the Node server, you need to open ports for bo
 
 If you need to connect a Node server to multiple mrzban panels, you need to add a new node service in the `docker-compose.yml` file for each panel. This can be done in two ways.
 
-::: tip Note
-In both configuration options, you can modify port settings used in sample `docker-compose.yml` files according to your needs. Additionally, you can add as many node services as required in this file.
-
-:::
+> In both configuration options, you can modify port settings used in sample `docker-compose.yml` files according to your needs. Additionally, you can add as many node services as required in this file.
 
 ### First case: Using Host Network
 
@@ -99,8 +94,7 @@ In this case, you have the ability to use all available ports in your environmen
 
  - Use the following example to add two node services to the `docker-compose.yml` file.
 
-::: details Sample configuration of `docker-compose.yml`
-::: code-group
+Sample configuration of `docker-compose.yml`
 ```yml{11,27} [docker-compose.yml]
 services:
   marzban-node-1:
@@ -135,7 +129,6 @@ services:
       - /var/lib/marzban-node:/var/lib/marzban-node
       - /var/lib/marzban:/var/lib/marzban
 ```
-:::
 
 - Then obtain the required certificate from the panels and place each one in the specified path as indicated in the sample.
 - Run Border Node.
@@ -160,8 +153,7 @@ In this scenario, only specific ports are usable and duplicate ports on the serv
 - Use the example below to add two Node services to the `docker-compose.yml` file.
 
 
-::: Sample configuration file `docker-compose.yml` details
-::: code-group
+Sample configuration file `docker-compose.yml` details
 ```yml{7,25} [docker-compose.yml]
 services:
   marzban-node-1:
@@ -199,7 +191,6 @@ services:
       - 2096:2096
       - 2097:2097
 ```
-:::      
 
 - After receiving the required certificates from the panels and placing them in the specified paths, run the Border Node.
 
@@ -232,13 +223,13 @@ docker compose down --remove-orphans; docker compose up -d
 
 ## Additional Notes
 
-::: tip Note 1
+Note 1
 If you want to consider a separate inbound for each node for better node management, you need to add a new inbound with different `Tag` and `Port` in the `Core Settings`.
-:::
 
-::: tip Note 2
+
+Note 2
 If you intend to use Warp on the node server and have configured the `docker-compose.yml` file in the second mode, you must enable Warp with the `Xray core`. If using Wireguard core, Warp will not work on the node server.
-:::
+
 
 ::: tip Note 3
 If you plan to use TLS-configured settings, you must obtain a certificate for your domain on the node server, then transfer it to the main server and enter the path of certificate files in the inbound. Also, instead of multiple certificates for multiple subdomains, you can get a wildcard certificate for your main domain to be used for all subdomains.
