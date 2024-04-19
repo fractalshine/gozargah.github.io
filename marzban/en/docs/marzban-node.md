@@ -223,7 +223,7 @@ docker compose down --remove-orphans; docker compose up -d
 
 ## Additional Notes
 
-***Note 1***
+***Note 1***<br>
 If you want to consider a separate inbound for each node for better node management, you need to add a new inbound with different `Tag` and `Port` in the `Core Settings`.
 
 ***Note 2***
