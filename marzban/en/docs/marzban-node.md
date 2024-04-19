@@ -223,30 +223,25 @@ docker compose down --remove-orphans; docker compose up -d
 
 ## Additional Notes
 
-Note 1
+***Note 1***
 If you want to consider a separate inbound for each node for better node management, you need to add a new inbound with different `Tag` and `Port` in the `Core Settings`.
 
-
-Note 2
+***Note 2***
 If you intend to use Warp on the node server and have configured the `docker-compose.yml` file in the second mode, you must enable Warp with the `Xray core`. If using Wireguard core, Warp will not work on the node server.
 
-
-::: tip Note 3
+***Note 3***
 If you plan to use TLS-configured settings, you must obtain a certificate for your domain on the node server, then transfer it to the main server and enter the path of certificate files in the inbound. Also, instead of multiple certificates for multiple subdomains, you can get a wildcard certificate for your main domain to be used for all subdomains.
-:::
 
-::: tip Note 4
+***Note 4***
 The `docker-compose.yml` file is sensitive to indentation and spacing. You can use tools like [yamlchecker](https://yamlchecker.com) to validate your configuration.
-:::
 
-::: tip Note 5
+
+***Note 5***
 After making changes in the `docker-compose.yml` file, restart Marzban Node with this command:
-bash
+```
 cd ~/Marzban-node
 docker compose down --remove-orphans; docker compose up -d
 ```
-:::
-
-::: tip Note 6
+***Note 6***
 Regarding Xray version, if Marzban Node is not on the latest version of Xray and you want to manually upgrade it or downgrade it for any reason through changing Xray-core version according to documentation.
- :::
+
